@@ -1,0 +1,17 @@
+{
+  "name": "blockchainexperiments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test",
+    "migrate": "truffle migrate --reset",
+    "call_contract": "truffle console < sayHello.automated.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "truffle": "^4.1.11"
+  }
+}
