@@ -6,7 +6,7 @@
   "scripts": {
     "test": "truffle test",
     "migrate": "truffle migrate --reset",
-    "call_contract": "truffle console < sayHello.automated.js"
+    "call_contract": "truffle console < automated.sayHello.js"
   },
   "author": "",
   "license": "ISC",

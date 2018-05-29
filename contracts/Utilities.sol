@@ -36,6 +36,32 @@ contract Utilities {
     return string(bytesStringTrimmed);
   }
 
+  function uintToHexstr(uint i) internal pure returns (string) {
+    if (i == 0) return "0";
+    uint j = i;
+    uint length;
+    while (j != 0) {
+        length++;
+        j = j >> 4;
+    }
+    uint mask = 15;
+    bytes memory bstr = new bytes(length);
+    uint k = length - 1;
+    // uint numStart = 48;
+    // uint letterStarn = 65;
+    while (i != 0){
+        uint curr = (i & mask);
+        bstr[k--] = curr > 9 ? byte(55 + curr ) : byte(48 + curr); // 55 = 65 - 10
+        i = i >> 4;
+    }
+    return string(bstr);
+  }
+
+  function strConcat(string _a, string _b, string _c, string _d, string _e, string _f, string _g) internal pure returns (string) {
+      string memory aAndBAndC = strConcat(_a, _b, _c);
+      return strConcat(aAndBAndC, _d, _e, _f, _g);
+  }
+
   function strConcat(string _a, string _b, string _c, string _d, string _e, string _f) internal pure returns (string) {
       string memory aAndB = strConcat(_a, _b);
       return strConcat(aAndB, _c, _d, _e, _f);
